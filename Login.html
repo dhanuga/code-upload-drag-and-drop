@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sri Lanka </title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>fdsgd</h1>
+  <div class="wrapper">
+    <form id="loginForm" action="#">
+      <h2>Login</h2>
+      <div class="input-field">
+        <input type="text" id="email" required>
+        <label>Enter your email</label>
+      </div>
+      <div class="input-field">
+        <input type="password" id="password" required>
+        <label>Enter your password</label>
+      </div>
+      <div class="forget">
+        <label for="remember">
+          <input type="checkbox" id="remember">
+          <p>Remember me</p>
+        </label>
+        <a href="#">Forgot password?</a>
+      </div>
+     
+      <button type="submit"  >Login <a href="#"></a></button>
+      
+      
+      <div class="register">
+        <p>Don't have an account? <a href="index.html">Register</a></p>
+      </div>
+    </form>
+  </div>
+
+  <script>
+  
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+   
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
+
+    
+      var emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address.");
+        event.preventDefault(); 
+        return;
+      }
+
+
+      if (password.length === 0) {
+        alert("Please enter your password.");
+        event.preventDefault(); 
+        return;
+      }
+
+     
+      var remember = document.getElementById('remember').checked;
+      if (remember) {
+        console.log("Remember me checked");
+        
+      }
+    });
+  </script>
+</body>
+</html>
